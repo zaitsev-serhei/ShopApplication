@@ -1,7 +1,6 @@
 package Models;
 
 import java.util.Date;
-//import java.util.Objects;
 
 public class User extends Model{
 
@@ -13,7 +12,7 @@ public class User extends Model{
     private Date lastActivityDate;
 
     public User(long id, String login, String firstName, String lastName, String password, Date lastActivityDate) {
-        super(id) = id;
+        super(id);
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
