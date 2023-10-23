@@ -1,31 +1,33 @@
-package Models;
+package model;
 
 import java.util.Date;
 
-public class User extends Model{
+public class User{
 
-//    private long id;
+    private long id;
     private String  login;
     private String  firstName;
     private String  lastName;
     private String  password;
     private Date lastActivityDate;
+    private boolean isDeleted;
 
-    public User(long id, String login, String firstName, String lastName, String password, Date lastActivityDate) {
-        super(id);
+    public User(long id, String login, String firstName, String lastName, String password, Date lastActivityDate, boolean isDeleted) {
+        this.id = id;
         this.login = login;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.lastActivityDate = lastActivityDate;
+        this.isDeleted = isDeleted;
     }
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(long id) {
-//        this.id = id;
-//    }
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getLogin() {
         return login;
@@ -67,4 +69,11 @@ public class User extends Model{
         this.lastActivityDate = lastActivityDate;
     }
 
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 }

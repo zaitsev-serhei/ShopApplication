@@ -1,4 +1,4 @@
-package Models;
+package model;
 
 import java.util.Date;
 
@@ -9,13 +9,15 @@ public class Order {
     private long total_price;
     private long client_id;
     private long product_id;
+    private boolean isDeleted;
 
-    public Order(long id, Date date, long total_price, long client_id, long product_id) {
+    public Order(long id, Date date, long total_price, long client_id, long product_id, boolean isDeleted) {
         this.id = id;
         this.date = date;
         this.total_price = total_price;
         this.client_id = client_id;
         this.product_id = product_id;
+        this.isDeleted = isDeleted;
     }
 
     public long getId() {
@@ -56,5 +58,13 @@ public class Order {
 
     public void setProduct_id(long product_id) {
         this.product_id = product_id;
+    }
+
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

@@ -1,4 +1,4 @@
-package Models;
+package model;
 
 import java.util.Date;
 import java.util.List;
@@ -12,12 +12,13 @@ public class Client {
     private Date lastActivityDate;
     private List<Order> orders;
     private String telephoneNumber;
-    private int bonuses;
+    private long bonuses;
     private String email;
     private Date birthday;
+    private boolean isDeleted;
 
-    public Client(int id, String firstName, String lastName, Date lastActivityDate, List<Order> orders,
-                  String telephoneNumber, int bonuses, String email, Date birthday) {
+    public Client(long id, String firstName, String lastName, Date lastActivityDate, List<Order> orders,
+                  String telephoneNumber, long bonuses, String email, Date birthday, boolean isDeleted) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -27,13 +28,14 @@ public class Client {
         this.bonuses = bonuses;
         this.email = email;
         this.birthday = birthday;
+        this.isDeleted = isDeleted;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -77,11 +79,11 @@ public class Client {
         this.telephoneNumber = telephoneNumber;
     }
 
-    public int getBonuses() {
+    public long getBonuses() {
         return bonuses;
     }
 
-    public void setBonuses(int bonuses) {
+    public void setBonuses(long bonuses) {
         this.bonuses = bonuses;
     }
 
@@ -101,4 +103,11 @@ public class Client {
         this.birthday = birthday;
     }
 
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 }
