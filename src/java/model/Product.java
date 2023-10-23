@@ -1,21 +1,22 @@
-package Models;
+package model;
 
 import java.util.Date;
 
 public class Product {
-
     private long id;
-    private String  name;
+    private String name;
     private float price;
     private long quantity;
     private Date delivery_date;
+    private boolean isDeleted;
 
-    public Product(long id, String name, float price, long quantity, Date delivery_date) {
+    public Product(long id, String name, float price, long quantity, Date delivery_date, boolean isDeleted) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.delivery_date = delivery_date;
+        this.isDeleted = isDeleted;
     }
 
     public long getId() {
@@ -58,5 +59,11 @@ public class Product {
         this.delivery_date = delivery_date;
     }
 
+    public boolean getIsDeleted() {
+        return isDeleted;
+    }
 
+    public void setIsDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 }
